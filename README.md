@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Code Snippets Platform 🚀
 
-## Getting Started
+A Full-Stack SaaS (Software as a Service) MVP built with **Next.js**. This project demonstrates the implementation of modern web architectures including OAuth 2.0 authentication, JWT session management, payment processing with Stripe, and a Headless CMS approach using Supabase.
 
-First, run the development server:
+## 📋 Features
 
+* **🔐 OAuth 2.0 Authentication:** Secure login using Google Accounts (via NextAuth.js).
+* **🎫 JWT Sessions:** Stateless session management using JSON Web Tokens.
+* **💳 Payment Gateway:** Integration with Stripe Checkout to process payments for premium content.
+* **🗄️ Headless CMS / Database:** Real-time data fetching from Supabase (PostgreSQL) to manage code snippets.
+* **🔒 Access Control:** Logic to differentiate between "Free" and "Premium" content based on user payment status.
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js 14 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Authentication:** NextAuth.js (Google Provider)
+* **Database:** Supabase (PostgreSQL)
+* **Payments:** Stripe API
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
 ```bash
+git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
+cd premium-code-snippets
+
+# Premium Code Snippets Platform 🚀
+
+A Full-Stack SaaS (Software as a Service) MVP built with **Next.js**. This project demonstrates the implementation of modern web architectures including OAuth 2.0 authentication, JWT session management, payment processing with Stripe, and a Headless CMS approach using Supabase.
+
+## 📋 Features
+
+* **🔐 OAuth 2.0 Authentication:** Secure login using Google Accounts (via NextAuth.js).
+* **🎫 JWT Sessions:** Stateless session management using JSON Web Tokens.
+* **💳 Payment Gateway:** Integration with Stripe Checkout to process payments for premium content.
+* **🗄️ Headless CMS / Database:** Real-time data fetching from Supabase (PostgreSQL) to manage code snippets.
+* **🔒 Access Control:** Logic to differentiate between "Free" and "Premium" content based on user payment status.
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js 14 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Authentication:** NextAuth.js (Google Provider)
+* **Database:** Supabase (PostgreSQL)
+* **Payments:** Stripe API
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
+cd premium-code-snippets
+
+###2. Install dependencies
+```bash
+npm install
+
+###3. Environment Variables
+Create a .env.local file in the root directory and add the following keys:
+Fragmento de código
+
+# Google OAuth (from Google Cloud Console)
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+# NextAuth Configuration
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_random_secret_string
+
+# Stripe (from Stripe Developer Dashboard - Test Mode)
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+
+# Supabase (from Supabase Project Settings)
+NEXT_PUBLIC_SUPABASE_URL=[https://your-project.supabase.co](https://your-project.supabase.co)
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+###4. Database Setup (Supabase)
+This project requires two tables in your Supabase project. Disable RLS (Row Level Security) for testing purposes.
+
+Table 1: snippets | Column Name | Type | Description | |-------------|------|-------------| | id | int8 | Primary Key | | title | text | Title of the snippet | | code | text | The code content | | is_premium | bool | TRUE for paid content, FALSE for free |
+
+Table 2: premium_users | Column Name | Type | Description | |-------------|------|-------------| | email | text | Primary Key (Stores email of paid users) |
+
+###5. Run the server
+```Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 How to Test
+View Free Content: Open the homepage. You will see free snippets available. Premium snippets will be blurred/locked.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Login: Click "Sign in with Google" to authenticate via OAuth 2.0.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Unlock Premium: Click "Unlock for $10". You will be redirected to Stripe.
 
-## Learn More
+Payment (Test Mode): Use the following test card details:
 
-To learn more about Next.js, take a look at the following resources:
+Card: 4242 4242 4242 4242
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Date: Any future date (e.g., 12/30)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+CVC: 123
 
-## Deploy on Vercel
+Success: Upon successful payment, you will be redirected to the success page, and your email will be added to the database. The premium content will now be visible.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📄 License
+This project is for educational purposes.
