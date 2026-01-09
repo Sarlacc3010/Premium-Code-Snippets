@@ -24,7 +24,7 @@ A Full-Stack SaaS (Software as a Service) MVP built with **Next.js**. This proje
 Follow these steps to run the project locally.
 
 ### 1. Clone the repository
-```bash
+bash
 git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
 cd premium-code-snippets
 
