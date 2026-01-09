@@ -25,7 +25,7 @@ Follow these steps to run the project locally.
 
 ### 1. Clone the repository
 
-git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
+git clone [https://github.com/Sarlacc3010/Premium-Code-Snippets.git](https://github.com/Sarlacc3010/Premium-Code-Snippets.git)
 cd premium-code-snippets
 
 ### 2. Install dependencies
@@ -52,14 +52,14 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
 NEXT_PUBLIC_SUPABASE_URL=[https://your-project.supabase.co](https://your-project.supabase.co)
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-###4. Database Setup (Supabase)
+### 4. Database Setup (Supabase)
 This project requires two tables in your Supabase project. Disable RLS (Row Level Security) for testing purposes.
 
 Table 1: snippets | Column Name | Type | Description | |-------------|------|-------------| | id | int8 | Primary Key | | title | text | Title of the snippet | | code | text | The code content | | is_premium | bool | TRUE for paid content, FALSE for free |
 
 Table 2: premium_users | Column Name | Type | Description | |-------------|------|-------------| | email | text | Primary Key (Stores email of paid users) |
 
-###5. Run the server
+### 5. Run the server
 
 npm run dev
 Open http://localhost:3000 with your browser to see the result.
