@@ -28,41 +28,11 @@ Follow these steps to run the project locally.
 git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
 cd premium-code-snippets
 
-# Premium Code Snippets Platform 🚀
-
-A Full-Stack SaaS (Software as a Service) MVP built with **Next.js**. This project demonstrates the implementation of modern web architectures including OAuth 2.0 authentication, JWT session management, payment processing with Stripe, and a Headless CMS approach using Supabase.
-
-## 📋 Features
-
-* **🔐 OAuth 2.0 Authentication:** Secure login using Google Accounts (via NextAuth.js).
-* **🎫 JWT Sessions:** Stateless session management using JSON Web Tokens.
-* **💳 Payment Gateway:** Integration with Stripe Checkout to process payments for premium content.
-* **🗄️ Headless CMS / Database:** Real-time data fetching from Supabase (PostgreSQL) to manage code snippets.
-* **🔒 Access Control:** Logic to differentiate between "Free" and "Premium" content based on user payment status.
-
-## 🛠️ Tech Stack
-
-* **Framework:** Next.js 14 (App Router)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
-* **Authentication:** NextAuth.js (Google Provider)
-* **Database:** Supabase (PostgreSQL)
-* **Payments:** Stripe API
-
-## 🚀 Getting Started
-
-Follow these steps to run the project locally.
-
-### 1. Clone the repository
-```bash
-git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
-cd premium-code-snippets
-
-###2. Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 
-###3. Environment Variables
+### 3. Environment Variables
 Create a .env.local file in the root directory and add the following keys:
 Fragmento de código
 
