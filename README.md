@@ -24,12 +24,12 @@ A Full-Stack SaaS (Software as a Service) MVP built with **Next.js**. This proje
 Follow these steps to run the project locally.
 
 ### 1. Clone the repository
-bash
+
 git clone [https://github.com/YOUR_USERNAME/premium-code-snippets.git](https://github.com/YOUR_USERNAME/premium-code-snippets.git)
 cd premium-code-snippets
 
 ### 2. Install dependencies
-```bash
+
 npm install
 
 ### 3. Environment Variables
@@ -60,7 +60,7 @@ Table 1: snippets | Column Name | Type | Description | |-------------|------|---
 Table 2: premium_users | Column Name | Type | Description | |-------------|------|-------------| | email | text | Primary Key (Stores email of paid users) |
 
 ###5. Run the server
-```Bash
+
 npm run dev
 Open http://localhost:3000 with your browser to see the result.
 
