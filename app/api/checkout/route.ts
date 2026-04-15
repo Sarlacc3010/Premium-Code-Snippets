@@ -14,7 +14,7 @@ export async function POST() {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "Acceso Premium a Snippets",
+              name: "Acceso Premium a los Snippets - De pago",
             },
             unit_amount: 1000,
           },
