@@ -8,7 +8,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     }),
   ],
-  // Esto fuerza el uso de JWT para la sesión
+
   session: {
     strategy: "jwt",
   },
