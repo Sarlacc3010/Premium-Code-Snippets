@@ -1,25 +1,27 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
-export default function SuccessPage() {
-  const { data: session } = useSession();
+function SuccessContent() {
+  const searchParams = useSearchParams();
+  const email = searchParams.get("email");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (session?.user?.email) {
-      // Registrar al usuario en la lista VIP
+    if (email) {
       const registerPremium = async () => {
         await supabase
           .from('premium_users')
-          .upsert([{ email: session.user?.email }]); // upsert evita errores si ya existe
+          .upsert([{ email }]);
         setLoading(false);
       };
       registerPremium();
+    } else {
+      setLoading(false);
     }
-  }, [session]);
+  }, [email]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-green-50 text-center p-4">
@@ -28,9 +30,13 @@ export default function SuccessPage() {
       
       {loading ? (
         <p className="text-gray-600">Activando tu cuenta Premium...</p>
-      ) : (
+      ) : email ? (
         <p className="text-xl text-green-700 mb-8">
-          Tu cuenta <strong>{session?.user?.email}</strong> ya tiene acceso total.
+          Tu cuenta <strong>{email}</strong> ya tiene acceso total.
+        </p>
+      ) : (
+        <p className="text-xl text-red-600 mb-8">
+          No se encontró el email en la transacción.
         </p>
       )}
       
@@ -40,3 +46,11 @@ export default function SuccessPage() {
     </div>
   );
 }
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <SuccessContent />
+    </Suspense>
+  );
+}
