@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-12-15.clover", // Usa la versión que te sugiera VS Code o la más reciente
+  apiVersion: "2025-12-15.clover",
 });
 
 export async function POST() {
@@ -14,7 +14,7 @@ export async function POST() {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "Acceso Premium a Snippets",
+              name: "Acceso Premium a los Snippets - De pago",
             },
             unit_amount: 1000,
           },

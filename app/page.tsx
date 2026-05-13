@@ -13,7 +13,7 @@ type Snippet = {
 export default function Home() {
   const { data: session } = useSession();
   const [snippets, setSnippets] = useState<Snippet[]>([]);
-  const [isUserPremium, setIsUserPremium] = useState(false); // <--- NUEVO ESTADO
+  const [isUserPremium, setIsUserPremium] = useState(false);
 
   // 1. Cargar Snippets
   useEffect(() => {
