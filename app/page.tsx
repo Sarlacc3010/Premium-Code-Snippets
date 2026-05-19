@@ -164,7 +164,7 @@ export default function Home() {
                             </button>
                           ) : (
                             <button onClick={handleCheckout} className="bg-green-600 text-white px-8 py-3 rounded-lg font-bold shadow-xl hover:bg-green-500 transition flex items-center gap-2">
-                              <span>💳</span> Desbloquear ($10)
+                              <span>💳</span> Desbloquear ($15)
                             </button>
                           )}
                         </div>
