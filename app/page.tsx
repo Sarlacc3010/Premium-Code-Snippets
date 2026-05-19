@@ -79,7 +79,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100 py-10 flex flex-col items-center">
       <div className="w-full max-w-3xl px-4">
         
-        {/* CABECERA */}
+        {/* HEADER */}
         <div className="bg-white rounded-2xl shadow-sm p-6 mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
             <h1 className="text-3xl font-extrabold text-gray-800">Premium Code Snippets</h1>
@@ -113,7 +113,7 @@ export default function Home() {
           )}
         </div>
 
-        {/* LISTA DE SNIPPETS */}
+        {/* SNIPPETS LIST */}
         <div className="grid gap-6">
           {snippets.length === 0 ? (
             <div className="bg-white p-8 rounded-xl shadow-sm text-center border border-gray-200">
@@ -160,11 +160,11 @@ export default function Home() {
                                 setCurrentUserEmail(email);
                               }
                             }} className="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold shadow-lg hover:bg-blue-700 transition">
-                              Ingresar email para ver opciones
+                              Ingrese su email para ver las opciones
                             </button>
                           ) : (
                             <button onClick={handleCheckout} className="bg-green-600 text-white px-8 py-3 rounded-lg font-bold shadow-xl hover:bg-green-500 transition flex items-center gap-2">
-                              <span>💳</span> Desbloquear ($15)
+                              <span>💳</span> Desbloquear Snippet ($15)
                             </button>
                           )}
                         </div>
