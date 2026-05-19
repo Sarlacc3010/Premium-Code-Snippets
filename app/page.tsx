@@ -15,7 +15,7 @@ export default function Home() {
   const [emailInput, setEmailInput] = useState("");
   const [currentUserEmail, setCurrentUserEmail] = useState<string | null>(null);
 
-  // 1. Cargar Snippets
+  // 1. Charge Snippets
   useEffect(() => {
     async function fetchSnippets() {
       const { data } = await supabase.from("snippets").select("*").order('id', { ascending: true });
@@ -24,7 +24,7 @@ export default function Home() {
     fetchSnippets();
   }, []);
 
-  // 2. Verificar si el usuario pagó
+  // 2. Check user premium status
   useEffect(() => {
     async function checkPremiumStatus() {
       if (currentUserEmail) {
